@@ -19,10 +19,13 @@
         <!-- section 3 -->
         <div class="sec2" v-show="showSec2">        
              <h1>Your activity for today is to ....</h1>
-            <h1>
+             <div class="activity-container">
+                     <h1>
                 {{jokes.activity}}
             </h1>
-            <h1>
+             </div>
+        
+            <!-- <h1>
                 {{jokes.key}}
             </h1>
             <h1>
@@ -30,8 +33,8 @@
             </h1>
             <h1>
                 {{jokes.price}}
-            </h1>
-             <button @click="loadActivity()" class="load-button">Suggest activiy </button>
+            </h1> -->
+             <button @click="loadActivity()" class="load-button">Suggest another </button>
             </div>
    
     </div>
@@ -56,6 +59,9 @@
     color: black;
     cursor: pointer;
     border-radius: 10px;
+    margin: 20px;
+    position: relative;
+    left: 300px;
 }
 
 .load-button:hover{
@@ -68,23 +74,31 @@
     grid-template-columns: 50% 50%;
 }
 
-@keyframes anim1 {
-	0% {
-        position: relative;
-		left: 50px;
-	}
-	100% {
-        position: relative;
-		right: 0px;
-	}
+.activity-container{
+    width: 700px;
+    height: 60px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
 }
+@keyframes anim1 {
+  0% { opacity: 20%; margin-top: 40px; border-radius: 30%;}
+  20% { opacity: 60%; margin-top: 20px; border-radius: 50%;}
+  30% { opacity: 100%; margin-top: 50px; border-radius: 70%;}
+  60% { margin-top: 30px; border-radius: 90%;}
+  100% {margin-top: 0px; border-radius: 30%;}
+}
+
 
 .anim-grid1{
     width: 100px;
     height: 100px;
     background-color: darkcyan;
     border-radius: 40%;
-    animation: anim1 4s ease-in-out;
+    animation-name: anim1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 .anim-grid2{
@@ -92,7 +106,10 @@
     height: 100px;
     background-color: pink;
     border-radius: 40%;
-    animation: anim1 infinite ease-in;
+    animation-name: anim1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 
