@@ -47,7 +47,7 @@
 .main-text{
   font-size: 40px;
   font-family: 'Josefin Sans', sans-serif;
-}m
+}
 
 .sub-text{
   font-size: 15px;
